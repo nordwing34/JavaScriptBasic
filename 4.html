@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=NVepD1WpYmTzSpiTjw3l3csjV0EiFDtrlyFhiBLvd1hJ9ozv92cr7AVgfoZHFp73mCYexYHcZfNCQX_MhA4PNXA6grmwpyyMOO1DN5Akk0S7qJEc6qZBIgPxRpFzAAB05BzMMKrjgblFnASZAU9JRiRWuMzqpo2cO2t1dKS57is0F3-B4VqE_o9J94C5eZZIl5gm0Ye2JlGGw4Bd-xgMQrS4S-Y2VV2PalWhOzkaihre9Kk8ChvbsfidrZtXtDG9Hv5OXcWtCeqYDrWg_aIhC5dNhsxzuVzHonOmu3qX49YH52_3yRaOQH_DFi-abaQmAhQmrCTrRiuf3G2Fs8Gf8ZxRSpwlo6HiKpaplQunygbuco9XfWbQXjNiYQWmf3NAONtr0T77CeSNqjbth3KS_Ch212Csl5JMJDsX3cpZEI-l-jU6TPXnfsanuvV0DRZ8g1CtSwFd1hP4gZ2zzXTaVLyszpY8Hhn5hMus2JWidN54dYAEm3G2mZyAZHbhRIwTA-vNlhMpZI5vk0MHpfO4Co_8KhyUWuwjL6CXQGHZ7uZFsoSXqTIGCWCzqJGasJE4HgLZ3DhkoYyD2wvRWLB6gPya_boysqY0bpy1RwDkTXUQNGof97Q2UJchQeLfJ9X6p6btGdINSdQYATKzvT9Og73zTlQIA2bvJUrynRUWDGVaQmikHMpDtZNDOkd2lN5Rnk11sHOpwHrwAo-jo09_WPcdt_7tczv2XnOe9plj1vOjV1lhFIz2hk3h1vVu0Mw_yvTHIhOJTjOq5m6IXikDUnceLUwmVYodArXhqbTIfxWaJO5AZF2n8-1Ds8EifMCem36LT7PNF8sQz2y3xYvW5vBigtc7kOsshv1o1hq25sAQA5bSnbtiae4xlHtLq7Z5arO0fsDNVXOsjCYSGIQ6Gg_0UlQAh4sCgrxiMB1n9SR3YAQehgJcpDC2Zn6k87RN3G4nfFGEmSgzi-aGAefKeDkpYjAX5geWQOOBtMyO96pv2_hdIDbqCvQIFmy5h9WK1-6tIY01vXYdsEwCwvmp-9EPf7pr8ZFl3eCKQzM9awVv40ayrBUVjwOGXb_va0IkbDsaL5ITOMm7OdFHNgTajX8e94wr7KvKBGjenvTCN5iKx4y7tJfxN1_nmlL_JlE5w1LQczh5mvG2FUQa4DZJX-aBR_hmJTI59IUpi0d-g8A" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  const var1 = +prompt("Первое число:");
+  const var2 = +prompt("Второе число:");
+
+  console.log("Введённые числа: " + var1 + " и " + var2);
+  console.log("Сумма чисел: " + getMySum(var1, var2));
+  console.log("Разность чисел: " + getMyDiff(var1, var2));
+  console.log("Умножение чисел: " + getMyMult(var1, var2));
+  console.log("Деление чисел: " + getMyDiv(var1, var2));
+
+/** Вычисление суммы двух чисел */
+  function getMySum(p_var1, p_var2){
+    return p_var1 + p_var2;
+  }
+
+/** Вычисление разницы двух чисел */
+  function getMyDiff(p_var1, p_var2){
+    let ret = 0;
+
+    if(p_var1 > p_var2){
+      ret = p_var1 - p_var2;
+    } else if(p_var1 < p_var2){
+      ret = p_var2 - p_var1;
+    }
+
+    return ret;
+  }
+
+/** Вычисление произведения двух чисел */
+  function getMyMult(p_var1, p_var2){
+    return p_var1 * p_var2;
+  }
+
+/** Вычисление частного от двух чисел */
+  function getMyDiv(p_var1, p_var2){
+    return p_var1 / p_var2;
+  }
+
+</script>
+</body>
+</html>

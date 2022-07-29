@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=fEXltadpSHODIZCwd8OBjeT3giBRm6Gn6-iKVfwVDxpxdIU0EA4H-OVDFWADnZUK7lXkklJxnDnz-5K3c8zHmAlOUHcvorsaAuwFZvFiQA24852DKyui_uUlutqabNr9WdhEzQ2f1zQLx-TmXR_wv60u3UCQgFSy5n3jSTPqgaiifJ8ANcVwbEFqrz8Ghmusvr_aWCb-MyfzVJ8OZ6E9EIPaY1TzCeTMz2m9MSZDT4eWI_krj7Uz0-2enz0o4yP7mDrWJ4uyX3s8DIRb6l1iA8IMintYgxnbcETMogSVvazxLzqdiXEMj2pPgSu0tv2hRgnMfh7cF3khCnYyLErHWIv6_neLOV0Vtgh0jNkcbSTzuroYKP1Hp1eZqv_b_mD8wzj8dtspkaWvIz9PXM6vpVyMm1TVScEovuRWchQb0r1J3cS14pRNK591ehihZ_mTyTd0YkDvjHr-B7epQ-ZRHr7nY0dPM68-zR1ZGJEml5PBkmkS4Q-O808D-RWDM8sgLaxG1wsKPOGums5pfv3z67uORSYSLuSiyZ0oA3BroIWyEha5rzSCn0PrUFJHHTXapxQIlHwDgExLInSvIUx3AJOqNQRJdXkJREszHMXYUhLHjVKCgvQsyAraoicFxToaWtWXpVQihJ8d4-AjVOyQZq3vMKhbfHHzMBrLWPwCoM0tYE-RbwzLc1-bjbozqFFa5tTJqsRz3sWGUzdWk-bSFkmTxglKIv4AJOU_vvx9F6772Void618ewaXQ_SWI_YwXsscpvpmR9-eXFA6cUfT9pQNHT-oD0jkJOXvGClBBCPsKttPAwO6cAFYMUpxWteY01Aqpw52yF7QcztFzGbBq9wzTJVgbF2LxfMK9bOrKW378zCyuOzD-DzVOLi-slNx30aBp1rGE-FXBKPfmU9JNDu96_3WPRvDRDfgcgCOCBkLJIG9cAvu0H4i4dyhTwNx8GkVmrkY3GGCyCIyAP0KXONRAy1YpQTqomq0_SLAaRuhdVceCSyNZY_g22gz2VE0XkglYVCz_pEanq4bYZrAdlp1MoyIm-H6NUyK3VKk6AIyNKfDsWnogII8y6bukjTUtHFbaLh-J-UcEia-GJfrcRa0cz1fzHWzKAgWbBqruG7chsQV3NLpd6QGPcDkz6UdjCozLM-EI4eLaCgkcw2WySDfnpdwth04ru3sp4_izDI" charset="UTF-8"></script></head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+  function declinationOfNumber(count, one, two, five) {
+    let ret;
+
+/**
+* Если второй разряд числа 1, то возвращаем five
+* Если второй разряд числа любой другой, то анализируем первый разряд
+*/
+    if(getRazr(count)){
+      ret = five;
+    } else {
+      switch(count % 10){
+        case 1:
+          ret = one;
+          break;
+        case 2:
+        case 3:
+        case 4:
+          ret = two;
+          break;
+        default:
+          ret = five;
+          break;
+      }
+    }
+    return ret;
+  }
+
+/** 
+* Функция анализирует полученный параметр (целое число) и возвращает true,
+*  если его второй разряд (десятки) равен 1
+*/
+  function getRazr(p_count){
+    let number, ret = false;
+
+/** 
+*  Делим параметр на 10. 
+*  Отбрасываем дробную часть, берём только целую.
+*  Ещё раз делим на 10 и берём отстаток от деления. 
+*  Это и есть второй разряд числа.
+*/
+    number = p_count / 10;
+    number = Math.trunc(number);
+    number = number % 10;
+
+/** Если number является 1, то возвращаем true, во всех остальных случаях false */
+    if(number === 1){
+      ret = true;
+    }
+
+    return ret;
+  }
+
+
+
+  // Число яблок, можно пробовать поставить свое целое, положительное число.
+  const applesNumber = 21;
+  // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
+  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+  // Выводим корректную строку, например:
+  // "У меня есть 1 яблоко."
+  // "У меня есть 2 яблока."
+  // "У меня есть 5 яблок."
+  // При любом целом, положительном числе в applesNumber, строка, которая
+  // выводится в console.log, должна иметь правильное склонение слова "яблоко".
+  console.log(`У меня есть ${applesNumber} ${word}.`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=C3LUfAc1deBdb5vOYnmhKyeEbyOlLPVlc-wp_MqFDD0hu1ZqfciBd88K2rLtLVUO_7D9N_5UV33AyY_FOuszqYJ4Ivhib41W6f7gic6AwEhBLF7hMLG7xjtSsuKikLrmJMHnvdSzoENtxvaXsczFN1jOPIf_1s54FIN3yRNyeFIIqdSEgMwWIfAZ4Y_YTi0k0ia49900gKsYBlFIkf32oLwcPyiUTHX93Dr84hRsmqYY-nElr34wQt9XlYQj_lhhae7FhAsrBcmoZXuWAsyMh2ULEOoRdN0oxHmq_ejo-h_jPxdQWOdEhBcn5CNLke2pYJuJbpBGS-oWPYNRxRAKAz2h-UK52KO7feWe_BjDclpmyK7RQmZTU-LH-ABLyOGEi2huV27qOkmLt2i_vAw-XlnnidAwgpPtjVzAG9stASe4B27TsKWqYQEWKFynIh6yuYvY8aOPHkRDwc_XxYmB6gZJZmtiqGDvEeM8vPk2Z64p_nkO4HdO6ggnvh7yFx2pQ1C0iJE7DOMEFcE-SvLCrqpnpQ-h0raQAJ_qpsEC6mHcDYXvv7oI_tQNE4gNqjuv6BtEdsk96qXkQaqUc1sYWe8Cx93ENBQ4p31y_A2brDt1O0UjpzHaLpLUT0tstgPsh-zkx9etDY6L5Nbe9YpW_sEUvx0x6b1kCZAvTloj29ziU0KzIQLph4xoea0QrWFf7_e8nDdHM_4TdOIkgp1VH92JAk1t3U5eBRj3fplKg7BTy8IWRjYd1oAfJpfRFobZCbMSIgb48lA8Guuxlp5E0HL4j40EEm70wvpB1edu8uZqQJfqLzIz1coeo9Mco0x-BYhgp08PqPxLEth8VTHUV_apN1he0VPnISUrwhXXXel6fdsFLNa-2SUUHP5ZEVIxCSv-I88aHMH3Me3xuyg2Yy-u60OGbltDxebUkxqF0WFPQfV5JTdg_IxScpbwX3xrdZnx0V0hsQ9l94uq4FpnoKM8egcXLdwHby1mRY90a30BUhJ9bdMbK4ml6A0B1WyjWI_XBixKpimjVYhpfS5SaJzpTUEYAW4iA_XIzNKjOuURfWl2x140e4Ro6V1XHzms9ZNn5q88WVoZjesXPTGsPL62sUfqVgzJEF6ae9o16uAGvHzXUVHz384wMyq9kWFtyCR4-CeI1elmBARQ5QUbrE6S9q4KjlnShala2lyE-Q8" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+
+<form name="testForm">
+  <input type="number" name="digit1">
+  <input type="number" name="digit2">
+  <select name="action" size=1>
+    <option value="+">Сложить</option>
+    <option value="-">Вычесть</option>
+    <option value="*">Умножить</option>
+    <option value="/">Разделить</option>
+  </select>
+  <input type="button" value="Считать" onClick="myCalculate();">
+</form>
+
+<script>
+  "use strict";
+
+/** Эта функция вызывается из формы */
+  function myCalculate(){
+    const dig1 = +document.testForm.digit1.value;
+    const dig2 = +document.testForm.digit2.value;
+    const action = document.testForm.action.value;
+
+    mathOperation(dig1, dig2, action);
+  }
+
+/** Эта функция вычисляет результат */
+  function mathOperation(p_dig1, p_dig2, p_action){
+    let result;
+
+    switch(p_action){
+      case '+':
+        result = getMySum(p_dig1, p_dig2);
+        break;
+      case '-': 
+        result = getMyDiff(p_dig1, p_dig2)
+        break;
+      case '*':
+        result = getMyMult(p_dig1, p_dig2)
+        break;
+      case '/':
+        result = getMyDiv(p_dig1, p_dig2)
+        break;
+    }
+
+    console.log("Введено: " + p_dig1 + " и " +p_dig2 + ", действие: " + p_action);
+    console.log("Результат: " + result);
+  }
+
+/** Вычисление суммы двух чисел */
+  function getMySum(p_var1, p_var2){
+    return p_var1 + p_var2;
+  }
+
+/** Вычисление разницы двух чисел. Всегда из бОльшего вычитается мЕньшее */
+  function getMyDiff(p_var1, p_var2){
+    let ret = 0;
+
+    if(p_var1 > p_var2){
+      ret = p_var1 - p_var2;
+    } else if(p_var1 < p_var2){
+      ret = p_var2 - p_var1;
+    }
+
+    return ret;
+  }
+
+/** Вычисление произведения двух чисел */
+  function getMyMult(p_var1, p_var2){
+    return p_var1 * p_var2;
+  }
+
+/** Вычисление частного от двух чисел */
+  function getMyDiv(p_var1, p_var2){
+    return p_var1 / p_var2;
+  }
+
+</script>
+</body>
+</html>
