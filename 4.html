@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WevxHnwDqOhqWvziFGHUuwYIvHcC-dxcZ6u8zcStGnuF-82m6s8YNDNtu8tsqmQ6BP2JLIm3Ft9BodCgQx-xO0WJLK3T5JP-tcuSZq2YxfE0xKofiL8cFyqClSCHiKuok3IulKHH-PuxVc0Hi6EPqlN-SCbofS_NVY1YQlSrnebAgaWkhXueqxAwVpirnvBLubh39vLp1oWyAyJYK4vRLArfortmAF7DFNY2ANhF2xqHJhd4j-tpBkjXeCmPqurefU6l_jDtLe5jFarIQC7-7E1V4UBYI86kJh-ohuzzQAJwhzkvVWDUqMEWMGd99nj0lhAIC2g1GjoLVOuD7M9r6V7rxtZswl7QQSI7d5zS91GXc6_1F5RM9JtZIX_QpWU5aYK5AvJTKplfx25f3BGCdhtcM5Wmkn8oBLpyBVc8ejaSeQaBkEfkJnhZqH4rEBSC7rivsoPdllqWJEsoV2HWaS7bXGN65522sO7wj1xFZRkWUFKEwzmOwlQ4OeEFFwP577U3k0JmyEV7KtDi5il6RoMSOb1UJE4qtJ6HuZ1jnKrGvy23SKTMK7JMZZiqWObsml-gQbcnUHiihBnpHgpUbB4XxQXUnvHZRARBHEV2MIvAt58RJHSYYSDn0cgr2ONSm8oDKXxAWaEo5E7vh7LBa0xagM0UovcevClpMscEljaaM9e-AsSQnwPBqS98-iuOf3VJ3PBImoTz-hJZ2wh11sNxWQSqhduM9Alh_iDYpyMW8Emew_Ub9ehQ0bPMQuSFICecDN_7KE61hLMmzVpQ-__48ODdYvawjJRkN0sU9XCf96Ou5Giuh-rTdmm3r-RUyIQrZAusQ9QWoHxSWEhS5_Y8Z4ZAsxiaOiaCUpf0hhRlHoyBxurlnl6VtLI0rtsHcNNbejBc07eXhy6rQMnfPPR2iSAlTaHY3QVDqAmup9w28WAdd1NKcik48z5pScjXj15SyW4CVz56D-KbcRdH3vOd2eAD3dUJw0NpWdQ9VAM3XgGmj5jTuVX6rwPM9gZb8Lmy_Ov5FZJBq6K8-K4oXfmTq9oSkym8HuW_60BbByxovVDgA1mTkKoJVWTg1jWiXkePB6v1T0hWpwkdyHsKqJXGcdUl0LgS5_hFj_ljWcDpr4eXe6EIW_2mp4Ok3MJodZEfw9peeiH5zUA2mzivbGXBeZ1kW8RuLgsrRhulkpg" charset="UTF-8"></script></head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо от пользователя получить число.
+Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.
+
+Пример:
+Пользователь ввел число 163. Программа должна вывести:
+"В числе 163 количество сотен: 1, десятков: 6, единиц: 3"
+
+Пример 2:
+Пользователь ввел число 74. Программа должна вывести:
+"В числе 74 количество сотен: 0, десятков: 7, единиц: 4"
+
+Пример 3:
+Пользователь ввел число 9537. Программа должна вывести:
+"В числе 9537 количество сотен: 5, десятков: 3, единиц: 7"
+
+Уточнение: пользователь всегда вводит корректное положительное целое число.
+-->
+<script>
+  "use strict";
+
+  let getPrompt, getNumber, get100, get10, get1;
+  getPrompt = prompt("Введите число");
+  getNumber = getPrompt;
+
+  get1 = getNumber % 10;
+  getNumber = Math.trunc(getNumber / 10);
+
+  get10 = getNumber % 10;
+  getNumber = Math.trunc(getNumber / 10);
+
+  get100 = getNumber % 10;
+
+  alert("В числе " + getPrompt + " количество сотен: " + get100 + ", десятков: " + get10 + ", единиц: " + get1);
+
+
+</script>
+</body>
+</html>
