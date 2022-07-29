@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=HStQFmmryrVbjhEIxCeMkUYtpbqnvcapPn4flBDCd7vEfgYm8ZzX17CURpzaZkVtfkY_Vrg2MkbRVdZulEbMSayNHQT3C_cXMQhbEwpBolfmN6VLNPEqIy5tSdKv36zDX-GHQ4Mo4ss9osqAHszvvtpBwXZb92m_HHblNp7ond0_zeeaoTNHdUahK3Zgk_NblgQ6WdmtuLBR4THa6xRt2cJVee4WhwtBPw7YK22Sve_k7DusikdgOUQ-8D66_P63urofMh_I_VfmJ1uSkVU8hiTEGMyZ61Vnt9G7yMv-DU_guy_DtrKVy6W6ztPIo5P-R6gqgekxAZ1wM3SC1mYflq2V-vcWY2vISy_forMNEjN2KAPBph33SA3a4_B-GuB8UZlZO6r4kxkiQxvXswxEsDaTQxS9eP8wzktkb4Z3Vq3WFT-tnzm-p69Q2RApvVAgmwnYms-fy0nbRGZYX4ZPkURoJY_OSewDByTB0b4C5Z8f1586xYCD1ybbWYSfIPdD0bWFQ6gwfX4fW9xPRGXngwzAf217fOxgDSReYlSP071Z27rL6cJPeZ-eHUVRwZI9Sl6Dj4p5Its0xmIU-IHfCDwfL7nmc6Q83T9eA540CBh153b-ZxznExvRbwrX0FJCQQj_NbB151552TwnCA1BrCg7Xa-rczK1LmiwN6C-lLT2t0FslIQ3pOPUmEpsUdherR_TNiyJdCuv0NpOWRE9GWX2p5Uhp9EcG8-WNt7k-RZZeiImnCrYCFBXAVG2vXjYEg3EQHClaWYl5smxmrc_x0ji15UWV5sSs-2DUNoTIQ8VkeW9uzTUeLfn8wp0bSjZZnSFDO5WL4zhW9hrn-krW8DzVmOyTFT-MP349l0Ibtl7_eHxsOlO_x-cw0MiaBvjwNN2wBxuzC9OzUGj5qndORbQhU2lexsBEMiNrfvJ18ungJJMwyueJjJZfXZKmUzSHMrqM3EGjomnUliVkrgKnp9konyPOzPouyegzvZ5U722XTPs73SOjHty01DqbF1JyJj5EkH2p0vn_xb0_P4iDMiq18RiYe33f3_Sia8JXJc02CGMDrKe9t9iw5duXCdv5iOP1LIlAP4E9l75VsKebJc5V9e7Of0eXkH26yOAHE4w-m9HLod1fkpxh_jBImDJ2qMp4p7jBQXzs1bu3eFNOgYLgE3Xc7TVGYk48_tvM3I" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо пользователя попросить ввести температуру в градусах Цельсия,
+преобразовать введенное пользователем значение в соответствующую температуру
+в градусах по Фаренгейту и вывести в alert сообщение с текстом:
+"Цельсий: {C}, Фаренгейт: {F}"
+Где вместо {C} и {F} должны быть подставлены соответствующие значения, которые
+были получены ранее.
+Формула перевода градусов Цельсия в градусы Фаренгейта:
+градусы Фаренгейта = (9 / 5) * градусы Цельсия + 32
+
+Уточнение: пользователь всегда вводит корректное число.
+-->
+<script>
+  "use strict";
+
+  let temperC = prompt("Введите температуру в градусах Цельсия", 0);
+  let temperF = (9 / 5) * temperC + 32;
+  alert("Цельсий: " + temperC + ", Фаренгейт: " + temperF.toFixed(2));
+
+// Применил функцию для округления toFixed(). Потому что на некоторых числах 
+// получаются слишком длинные результаты. Например, если temperC = -12, то 
+// temperF будет 10,3999999...
+
+</script>
+</body>
+</html>
