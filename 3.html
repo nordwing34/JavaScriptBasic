@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=iLNIURcKxB2jkAEMGgl92drUpIpd2wKa0mnvAizZWenQAyR_n1KSDK5wTGJEM-7zKd8EacXwfoHq6NY52rg-Rdv0lwmdGIr82NM4gUgZrFXkiz945zzOL1aJGpSzdvobn-6xkZ4Jiiuz9_QNQP7x_BO8xPxufMs_QpIzjDIVwaJ3jsrIbYE_4wNRJlg4qgNrC6prwC1i0wbbZn5bsDiePlD8qWKPlMGxYCRgM9aLxu-Bh7OrWv2YB9ilmbYmMywUBdDQy0m20wu-_Rhd1PIX3Mbh-53-mQdzsaTgP4HOsgcX9U8AVIh6DQeHyMBXvsR7PKwVheFaJkRFTBUyS402dekh2sPSpyEGYY37RfbwTsGV2GhUlt-ndeIzi-FBjCi-yb3oSj2px9Vb9gv8dSlLpjZbl1btI7q6pPQG6DN7Oo-JjzGGYeVKRLeJOD0togw68IzfWEQuWtohUFWgBpbe5Ueq_laPP4gXi7_87Rns3xnKPpXYS6ICSP9dDKM6j9tHMl6XnCb7ymDXz3nojCHrvxv_ytKc8_rJtBUOfCO72EFUV-J45bfTNNUpadHY-mX9_ZnStgea8Rvq2MqO_i6QlQ4MbBzgij4wBJLb6HuYH-Z8ZWJlA6EicjH0fk15ro8EEn-OHkPUpGftuqy30o-mmNnK_4z1oO5vCIqZPLC1Q8lOmtx9M5Q_IBOUYqeUSn3p03LckuB5lRDj1a9zWFaLXrAX0TJ0uuD-TsWLuGI9eJHiYNyDxvaE0S0xZSdqKDdEIg9JYIsEJoBL3evd9iOaiQFyQCUcIvUDOM1mUEWwQe8IbKLXMngnYb0kcPrAIZYVDYBmUfp6ZzoGs41ejYYDDyGLJAD65ViSEeAIJIAnzH-n6tDqbCdYNopdeRTcUROh6WpSvUExSMR7TwSdZh1nBn7Zn-dj_o-Yr5963xbH37BHk9yctYl9EvThcR6cgcYMdfSWrFo2zTfqKBf17yhGEvQqQnAlsTLIN76i3oXPzvPvX7BqBYC71N-239HtYmmZQP_jKZT5v4h_USjtgjPhv9IxacyGCwCHgNyA6ZZMVEbDuaG5dJSG6vgvyh3rVIBcSBGOn7608oHeY6myWT0pzxQMLxQLT-Y6qOIEFWK6zv3bN7uDKIhsulgOYoaEKQIekrEn5SrCQKxh2tnK2zFe7MAv67trAEYVY-pdw97kTHc" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо попросить пользователя ввести два числа в переменные `a` и `b`.
+Необходимо вывести в консоль один результат из следующих проверок:
+1. Если оба числа в переменных `a` и `b` положительные, вывести разность
+чисел `a` и `b`, а именно, вычесть из переменной `a` значение переменной `b`.
+2. Если оба числа в переменных `a` и `b` отрицательные, вывести произведение
+чисел `a` и `b`.
+3. Если числа в переменных `a` и `b` разных знаков, вывести сумму чисел
+`a` и `b`.
+В остальных случаях программа не должна ничего выводить.
+-->
+<script>
+  "use strict";
+
+  const a = +prompt("Введите переменную 'a'");
+  const b = +prompt("Введите переменную 'b'");
+
+// Первый вариант
+  if(a > 0 && b > 0){
+    console.log("Первый вариант: " + (a - b));
+  } else if(a < 0 && b < 0) {
+    console.log("Первый вариант: " + (a * b));
+  } else if( (a < 0 && b > 0) || (a > 0 && b < 0) ) {
+    console.log("Первый вариант: " + (b + a));
+  }
+
+
+// Второй вариант
+  if( (a !== 0) && (b !== 0) ){
+    console.log("Второй вариант: " + getNumb(a, b));
+  }
+
+  function getNumb(par_a, par_b){
+    let ret;
+
+    if(par_a > 0 && par_b > 0){
+      ret = par_a - par_b;
+    } else if(par_a < 0 && par_b < 0) {
+      ret = par_a * par_b;
+    } else if( (par_a < 0 && par_b > 0) || (par_a > 0 && par_b < 0) ) {
+      ret = par_b + par_a;
+    }
+
+    return ret;
+  }
+
+</script>
+</body>
+</html>
