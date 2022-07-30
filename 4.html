@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=8CanOwrWKBr_nrf8RbojVquT1Qu5LZ9I4Ik6FyDyhcK4S-4_-SQt6zG8lbouqMj_2KxztPO9WnCOmXAnV0LqGBnVj8ytpsytSYo2BIzyNoDaLaIpEfczk9dsdJtBTQn26Gj98Z0YnLL-4PkaXyMvdknBSKIJy_9fiAgIyZZdfOhnSMlXvV8-27CzMHhkXdFOFEH7eibq8w2dq2eCJA8aVM1mxmJdvJ44SMUzt0y11RW2POgqEqxGsAjdT1UaI2ZlDUJ98qEpnc5icJQjn-G-e0pXmsWaBvhN1WLGGvbl7eBCG1UCIbKE5Sk7hGM2oexwp_m9Y6A4Bh4z1cm1HL8SqwTOPfnuaH5THHP9B9ISvdOkzoWbwJ93-tfAnLdqeBaHr1Kse2AFYTScv2f5kTBEs6RLIuPnVZWdlx-dXHBIWcyr-MgnKes7fVr6d9RiylYveCCLT_0QL-gnAniX75PkVQ1ly8uFtqdjta9VkGxpJHmQMexc2DhY8Eb9VodiePtsJ2zAJ8UKRvmzS6OgJeIVvXUlYgBPBKPY_9PyNSaMi6ap8PHuHx6xdRwxn6fJaKTAk4XJZnyM6B7IAKCsSYkdwd7YxgGzLBaSsfZrUa4UVqiR1FZukFDEbTB8meiJP-cmOxbp5pjjtmjcNiAVqbp-2cPp0W4uZQ5EnjWXd_efOFmZjFIH4_N0djblePP763H-j86_Nd5InfdKTECmjOrJ_a3aiTQB3plwqbF3xl8SpLrbk1GUTmMT3o9V15qpPowZ3enICBbYnHcYNajGsthGHIjPd-LYem4Zgvay9Ssa2oUfoch9vqiPvpmVBUKRQk6b3Wguns2Tvv_HZ2cpemMDstcXRG94I6NQ1Iq3Ju1Wsjs79aWaf6MxO9yEoFbvcj3y3KZQv4oA98zd5yARKVG5G6w-gBFWM6WN6oiIowE8b2YX-CG4KW1mYrdlyjBRitFas0-M8KXtcABxTGHaqhxU0p7bpln3L-f0Rgx3tj5r4D6xAFFqUie17b-rXyiXO2CujCFPRn7-X2hqM_Kpe4fos6BJC77HDO3GeOgBzffWdmy60IDfSOHPxpedPzTfmwVb4WEQlhDFN9lftXGDdz9Ek88oTCvr4Que78gb-eVvBoNSoeMbAaer20iKnnkTXJot_yc--cbClYiAGZrT4IGB89S6rw0vUO4rtmgnlWHtZVE" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна
+фотография используя метод filter. Исходные данные - массив products.
+2. Необходимо отсортировать массив products используя метод sort по цене,
+начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести
+отсортированный массив в консоль.
+-->
+<script>
+  "use strict";
+
+  const products = [
+    {
+      id: 3,
+      price: 127,
+      photos: [
+        "1.jpg",
+        "2.jpg",
+      ],
+    },
+    {
+      id: 5,
+      price: 499,
+      photos: [],
+    },
+    {
+      id: 10,
+      price: 26,
+      photos: [
+        "3.jpg",
+      ],
+    },
+    {
+      id: 8,
+      price: 78,
+    },
+  ];
+
+/* Решение */
+
+/** 
+* Функция вызывается для каждого элемента массива. 
+* Каждый такой элемент содержит объект. Функция проверяет:
+* 1. Содержит ли этот объект свойство photos.
+* 2. Содержит ли свойство photos хоть одну фотографию (массив photos не нулевой).
+* Если это так, то функция возвращает прошедший проверку элемент.
+* ЗЫ. Все эти комменты я пишу для себя, чтобы закрепилось.
+*/
+  function isPhoto(element){
+    if("photos" in element && element.photos.length){
+      return element;
+    }
+  }
+
+
+/**
+ * Функция с правилами сортировки массива
+*/
+  function compareArr(a, b){
+    if (a.price > b.price) {
+      return 1;
+    }
+    if (a.price < b.price) {
+      return -1;
+    }
+    return 0;
+  }
+
+
+/**
+ * Это новый массив, содержащий только те элементы исходного массива,
+ *  в которых найдены картинки.
+*/
+  const productFiltered = products.filter(isPhoto);
+  console.log(productFiltered);
+
+/**
+ * Сортировка исходного массива
+*/
+  products.sort(compareArr);
+  console.log(products);
+
+
+</script>
+</body>
+</html>

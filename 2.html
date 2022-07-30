@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=A9zaeP5SVEbnF9mFzeXjvpDSYIMgzLN4Ra5cLzXYVgS9iAMXjRiKVhnrCMjG5Lq5wCSvzwXsJ-i1zUiFe1M1qgCGlyeiRMPiXph4OGQfltp36YZU22SQZ0vhm6Ev8TB2M6IP1ym7L0gEMF91lboUodMZByxJ5tXqz5RD-g6pKhzjyShT_UCTBlDhbQus6J9MzqmGIhxxoUa5EerBSvRZniKsPZF-DyGesF4ww_jxl-GbJ_UGd_GHcuL7vSzNiPzArnYpfTBXchX_r0_Uug_lNAbXbBxZEvuV2hTEzcrSboPsXfpZuTO3S_JMxuj0CkmNk9FuE-d3kULhcm05aW3AQvE12Zd-gv8mmdSkPZ3IsgA5b-92MyzP7nB1mBK9XdEd471uE4sY__l11-fZif6AX5AQL-QT0vpOEKr6cf-1FcIE0AqE3B_caq4SUCKWqV_21lyAYtF5tyMT_a8vjbSwAVgrT3r9KApk02Kvfrfzagpp0qbmHJCWXJZFxpLl6CnkSDuJAphjPynnAv-1QlnBFiA71NZi0WofDapxN3HMqNP7Jf4HXzuosK1RjifoIVNqGJ7pmkW4ea8eFWSL_RrZXJV78Xuvmgfvx9EgY6mlHhY97GuAQoJKNkoRTyCQ-hcSReX8eiHV_na9d1hACOp6V9SItc_j67aBj0kcHoONBinh6TSprVd7rzBWNzVpKYt7eceAWLOm4gaatHV212sLxPt2UtlwIdUfaFlBDYrRIwekxFV9sZpJI8bKh4h3LnVILs75gxROUln2BP1Wtky3H_HTtvhzdz6vMgRYULc3D2ZM2b3rEu_vtEoRbuZAzZa1sal90xmXn3YGYgWBIYILzD1xrfPUebPA0K506ZgMihxgTGOe-QM19kc7NGaLpMR5jN8HGKoFZ15xQbUGWNKL5i9CdqihgkdTnE0mciCv_bJyManRoM3kpP4TildD5t2mlSMPZFxZezWUdk2aQhzrhZZh58GIWdtu0C0umHZHY6dXnEbhyrQC0L9VOXB3PApZ3muYt25MdmkZmBUzT4R8wPf0oMeUkbZ_2zW4JXxqNy1JYTLkK8gySmrTWAI6xmvdzp1tgbAg9zPxiSRllMRVNn8VgKRg1dMqFF085o-b_4jX3tCEuEVA3tYi7H2gHBN15wDKQtAjrpe_h2DqdxD9bL0f4R_qXwsjEZGhcqfzJ_Q" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо из объекта, который лежит в константе post вывести значения, к
+которым приписан комментарий, в консоль.
+-->
+<script>
+  "use strict";
+
+  const post = {
+    author: "John", // вывести этот текст
+    postId: 23,
+    comments: [
+      {
+        userId: 10,
+        userName: "Alex",
+        text: "lorem ipsum",
+        rating: {
+          likes: 10,
+          dislikes: 2, // вывести это число
+        },
+      },
+      {
+        userId: 5, // вывести это число
+        userName: "Jane",
+        text: "lorem ipsum 2", // вывести этот текст
+        rating: {
+          likes: 3,
+          dislikes: 1,
+        },
+      },
+    ],
+  };
+
+  console.log(post.author);
+  console.log(post.comments[0].rating.dislikes);
+  console.log(post.comments[1].userId);
+  console.log(post.comments[1].text);
+</script>
+</body>
+</html>

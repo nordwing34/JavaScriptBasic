@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=OEAsJaXK_EKzfjanZJSa7sPZw9T2O4pMfsV26U3ovnsmuDuR6Q7uT_G4-D_PFyOUD63S-FGq3EgMf-YoIiNkctlNisT_6fADdJHRcJVO-6XFngdzoMmQXNuYnP0YfGgWXW2Ntc-6Jr_7BTZAotCb3AIIwV-VsA-zwXksf_ZOI7AtrTuEhSC4jeoa5HYAITzi4FDT_VavOLHbTmmWEhjQvvWXd7vRQ-D8lxVhRh7HCJrQFovJzPO75HxCuPxShA4nLXkVXXB-atzIOetR9hkR0uL5gckPvmaZAuN6mLrQnOYp_Dc98emQ1w_HtWz2xOGGLCeomyB_iJ4Et6ZjDoJqejeEiqXoSZ22_YbFt5QDhO2q37yFBXbUCVUBA4Bn2mD2HGQoqkH5uTey7170YqoI_yyRc8hnrexq2xC9yA4FqbyLuv4BYnAkGHf0pgXDHszz6OHrRZxM8hwR3k53ZdcmFd5sulWIh2J-XX4EclmBX2o0D0tXh6RC8EtgYRFobg4FxANvDCwDbnajVvNM9n8QOeIFpmLMsNo07E8Jlu7EjbH7xHTmUhHgPUOhEn6Y8QOf7L-SCQ5Gjp_Ypm36C_LwPS0w-t9Og1InEar7Z3TZVIGg5Hn-uux0nh6oN9tc9GxX6xpL2TyQ49q2zR88qoFzBvcd3133rLyrySbXvxRQ5EnsYTefNuPhHfAe2blvSvTukEBvqve0UV-xou-pq-LqWEu14G0797zttDRSLD-l4pzb0vikT-d0pC8BsPcV91A-_CMor3gIGgJ829DrFoccZaSUeJU5XkuxVYCfELjqsi-H_vqFH3ymGGMg9j3jcWG00jlgYjhjx_a-6hqZsIMMCUx_9N-nvx1SDI9wagK9Xawi2HYeu9mX_TNvwQ-p0O-e-0fLb5gej1fM7dQk6zWEnuSrvM7pUA0zErlkU4ZJSZHfVHbPZ-CPdE2ulkFLBHe_lav89BrJuHGJOTsdeOEkQO6rUGZYt1Zohon_dZl-6p6pSBgchI6j0ortJlUU4EJmg-K8zB-1pl6SeGdMunfK4GUNp9stTwJMDf2b2GNamWbzxJIZ67pwgbOaa0TVlSi6cnafljvquYVxAMip-GEhGM_AD2GbD3SJJPICrL--Qom5vIwjFwnE9iXeBSiAP1iJD0w7v3eV9x6TN6FwZWw_1jWOszZf4-Kzx-sHkyQb2dI" charset="UTF-8"></script></head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+0 – это ноль
+1 – нечетное число
+2 – четное число
+3 – нечетное число
+…
+10 – четное число
+-->
+<script>
+
+  "use strict";
+
+  for (let i = 0; i < 11; i++) {
+    console.log(i + " - " + getParity(i));
+  }
+
+  function getParity(par){
+    let ret = "чётное число";
+
+    if(par % 2){
+      ret = "нечётное число";
+    }
+    if(par === 0){
+      ret = "это ноль";
+    }
+
+    return ret;
+  }
+
+</script>
+</body>
+</html>
